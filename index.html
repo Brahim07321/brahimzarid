@@ -20,6 +20,115 @@
       rel="stylesheet"
     />
     <style>
+
+
+/* ===== FIX MOBILE MENU DARK ===== */
+body.dark .nav-links {
+  background: #303b40;
+}
+
+/* ===== MENU BUTTON ===== */
+#menuBtn{
+  display:none;
+  font-size:24px;
+  background:none;
+  border:none;
+  color:inherit;
+}
+
+@media (max-width:800px){
+
+  #menuBtn{display:block;}
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    flex-direction:column;
+    display:none;
+    padding:20px;
+    background:var(--white);
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+}
+
+/* ===== MOBILE IMPROVE ===== */
+@media (max-width:600px){
+
+  .container{padding:0 20px;}
+
+  .hero-title{font-size:34px;text-align:center;}
+  .hero-sub{font-size:22px;text-align:center;}
+  .hero-desc{text-align:center;}
+
+  .cta-group{flex-direction:column;align-items:center;}
+  .btn{width:100%;}
+
+  .projects-grid,
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+
+/* ===== FIX MOBILE MENU DARK ===== */
+body.dark .nav-links {
+  background: #303b40;
+}
+
+/* ===== MENU BUTTON ===== */
+#menuBtn{
+  display:none;
+  font-size:24px;
+  background:none;
+  border:none;
+  color:inherit;
+}
+
+@media (max-width:800px){
+
+  #menuBtn{display:block;}
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    width:100%;
+    flex-direction:column;
+    display:none;
+    padding:20px;
+    background:var(--white);
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+}
+
+/* ===== MOBILE IMPROVE ===== */
+@media (max-width:600px){
+
+  .container{padding:0 20px;}
+
+  .hero-title{font-size:34px;text-align:center;}
+  .hero-sub{font-size:22px;text-align:center;}
+  .hero-desc{text-align:center;}
+
+  .cta-group{flex-direction:column;align-items:center;}
+  .btn{width:100%;}
+
+  .projects-grid,
+  .services-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
  
       * {
         margin: 0;
@@ -641,19 +750,20 @@
       
     </style>
   </head>
-  <body>
+  <body class="dark">
+
     <nav class="navbar" id="navbar">
       <div class="logo">BraHiM ZaRiD</div>
+    
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects-page">Projects</a>
         <a href="#contact">Contact</a>
       </div>
-      <button class="dark-toggle" id="darkToggle">soft dark</button>
-    </nav>
-
-    <main>
+    
+      <button id="menuBtn">☰</button>
+    </nav>    <main>
       <!-- hero -->
       <section id="home" class="hero">
         <div class="hero-shape"></div>
@@ -1035,64 +1145,66 @@
       <p>© BraHiM ZaRiD — built with calm intention</p>
     </footer>
 
-    <script>
-      (function () {
-        // navbar solid shadow on scroll
-        const navbar = document.getElementById("navbar");
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 30) navbar.classList.add("scrolled");
-          else navbar.classList.remove("scrolled");
-        });
+<!-- غير نوريك غير الجزء لي تبدل باش ما نطولش عليك بزاف -->
 
-        // dark toggle (soft)
-        const toggle = document.getElementById("darkToggle");
-        toggle.addEventListener("click", () => {
-          document.body.classList.toggle("dark");
-          toggle.textContent = document.body.classList.contains("dark")
-            ? "light mode"
-            : "soft dark";
-        });
+<script>
+(function () {
 
-        // scroll reveal (fade-section)
-        const fadeSections = document.querySelectorAll(".fade-section");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) entry.target.classList.add("visible");
-            });
-          },
-          { threshold: 0.2 }
-        );
-        fadeSections.forEach((s) => observer.observe(s));
+// NAVBAR SCROLL
+const navbar = document.getElementById("navbar");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 30) navbar.classList.add("scrolled");
+  else navbar.classList.remove("scrolled");
+});
 
-        // skill bars animation when visible
-        const skillBars = document.querySelectorAll(".skill-bar-fill");
-        const barObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                const bar = entry.target;
-                const width = bar.getAttribute("data-width") || 0;
-                bar.style.width = width + "%";
-              }
-            });
-          },
-          { threshold: 0.3 }
-        );
-        skillBars.forEach((bar) => barObserver.observe(bar));
+// MENU MOBILE
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.querySelector(".nav-links");
 
-        // smooth scroll internal links
-        document.querySelectorAll('a[href^="#"]').forEach((link) => {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute("href"));
-            if (target) target.scrollIntoView({ behavior: "smooth" });
-          });
-        });
-      })();
-      
-    </script>
-  <script>
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
+// DARK MODE SAFE
+const toggle = document.getElementById("darkToggle");
+
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggle.textContent = document.body.classList.contains("dark")
+      ? "light mode"
+      : "soft dark";
+  });
+}
+// FADE
+const fadeSections = document.querySelectorAll(".fade-section");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  },
+  { threshold: 0.2 }
+);
+fadeSections.forEach((s) => observer.observe(s));
+
+// SKILLS
+const skillBars = document.querySelectorAll(".skill-bar-fill");
+const barObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const width = bar.getAttribute("data-width") || 0;
+        bar.style.width = width + "%";
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+skillBars.forEach((bar) => barObserver.observe(bar));
+
+})();</script>  <script>
     const projects = {
       flowboard: {
         title: "FlowBoard",
