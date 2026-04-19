@@ -602,7 +602,7 @@ body.dark .nav-links {
       }
 
       /* responsive */
-      @media (max-width: 800px) {
+      @media (max-width: 400px) {
         .hero-grid,
         .about-grid,
         .services-grid {
@@ -619,6 +619,24 @@ body.dark .nav-links {
           width: 300px;
           height: 300px;
         }
+        .form-grid {
+        grid-template-columns:  1fr;
+        gap: 24px;
+        display: block;
+      }
+
+      .input-field {
+        margin-top: 2px;
+        width: 100%;
+        padding: 18px 24px;
+        border: 1px solid rgba(108, 154, 139, 0.2);
+        border-radius: 50px;
+        font-family: inherit;
+        font-size: 16px;
+        background: rgba(248, 250, 252, 0.5);
+        transition: 0.3s;
+        margin-top: 15px;
+      }
       }
       /*********************************/
       #projects-page,
@@ -644,6 +662,12 @@ body.dark .nav-links {
         color: var(--navy);
         margin-bottom: 2rem;
         position: relative;
+      }
+      .btn-primary {
+        background: var(--sage);
+        color: white;
+        box-shadow: 0 10px 20px -8px rgba(139, 170, 158, 0.4);
+        margin-bottom: 10px;
       }
       .projects-grid {
         display: grid;
