@@ -22,10 +22,7 @@
     <style>
 
 
-/* ===== FIX MOBILE MENU DARK ===== */
-body.dark .nav-links {
-  background: #303b40;
-}
+
 
 /* ===== MENU BUTTON ===== */
 #menuBtn{
@@ -76,10 +73,7 @@ body.dark .nav-links {
 
 
 
-/* ===== FIX MOBILE MENU DARK ===== */
-body.dark .nav-links {
-  background: #303b40;
-}
+
 
 /* ===== MENU BUTTON ===== */
 #menuBtn{
@@ -358,6 +352,8 @@ body.dark .nav-links {
         background: var(--sage);
         color: white;
         box-shadow: 0 10px 20px -8px rgba(139, 170, 158, 0.4);
+        margin-bottom: 0px;
+
       }
 
       .btn-primary:hover {
@@ -667,7 +663,7 @@ body.dark .nav-links {
         background: var(--sage);
         color: white;
         box-shadow: 0 10px 20px -8px rgba(139, 170, 158, 0.4);
-        margin-bottom: 10px;
+       margin-bottom: 10px;
       }
       .projects-grid {
         display: grid;
@@ -900,18 +896,19 @@ body.dark .nav-links {
             <!-- card 1 -->
             <div class="project-card">
               <img
-                src="https://placecats.com/400/200?random=1"
+                src="img/ERP.jpg"
                 alt="project preview"
               />
               <div class="card-content">
-                <h3 >FlowBoard</h3>
+                <h3 >Système ERP pour la Gestion des Stocks</h3>
                 <p >
-                  Analytics dashboard for agile teams. real-time collaboration.
+                  SmartStock ERP : Système intelligent de gestion de stock et d’analyse des performances
                 </p>
                 <div class="project-tech">
-                  <span class="tech-badge">React</span>
-                  <span class="tech-badge">D3</span>
-                  <span class="tech-badge">Firebase</span>
+                  <span class="tech-badge">laravel</span>
+                  <span class="tech-badge">Javascript</span>
+                  <span class="tech-badge">MYSQL</span>
+                  <span class="tech-badge">JSON</span>
                 </div>
                 <a href="#project-detail"
                 class="btn btn-primary"
@@ -924,16 +921,19 @@ body.dark .nav-links {
             <!-- card 2 -->
             <div class="project-card">
               <img
-                src="https://placecats.com/400/201?random=2"
+                src="img/RNVD.jpg"
                 alt="project preview"
               />
               <div class="card-content">
-                <h3>ecocart</h3>
-                <p>Sustainable e‑commerce PWA with carbon footprint tracker.</p>
+                <h3>Système de Gestion des Rendez-vous</h3>
+                <p>Site web dynamique conçu pour faciliter la prise de rendez-vous et assurer un suivi précis de chaque réservation. Les utilisateurs peuvent sélectionner le service, la date et l’heure disponibles, et confirmer leur rendez-vous via un QR code..</p>
                 <div class="project-tech">
-                  <span class="tech-badge">Vue</span>
-                  <span class="tech-badge">Node</span>
-                  <span class="tech-badge">Stripe</span>
+                  <span class="tech-badge">Html</span>
+                  <span class="tech-badge">Css</span>
+                  <span class="tech-badge">JavaScript</span>
+                  <span class="tech-badge">PHP</span>
+                  <span class="tech-badge">MYSQL</span>
+
                 </div>
                 <a href="#project-detail"
                 class="btn btn-primary"
@@ -1231,9 +1231,9 @@ skillBars.forEach((bar) => barObserver.observe(bar));
 })();</script>  <script>
     const projects = {
       flowboard: {
-        title: "FlowBoard",
-        description: "Analytics dashboard for agile teams.",
-        tech: ["React","D3","Firebase"],
+        title: "Système ERP pour la Gestion des Stocks",
+        description: "Ce projet vise à concevoir et développer un système ERP de gestion de stock permettant une administration efficace et centralisée des opérations liées aux produits et aux fournisseurs. Le système offre plusieurs fonctionnalités essentielles, notamment l’ajout et la gestion des produits, la gestion des fournisseurs, ainsi que le suivi en temps réel des niveaux de stock. Il permet également de générer des alertes en cas de stock faible afin d’éviter les ruptures En outre, la solution intègre des fonctionnalités d’importation et d’exportation de données au format Excel et PDF, facilitant ainsi l’analyse et le partage des informations. Le système inclut également le calcul des profits afin d’aider à l’évaluation de la performance commerciale et à la prise de décision.",
+        tech: ["Laravel","Bootstrap","js", "MYSQL", "JSON"],
         images: ["b1.png","b2.png","b3.png"],
         github: "https://github.com/brahim/ecocart"
       },
