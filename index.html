@@ -7,6 +7,7 @@
     <!-- calm & elegant fonts: DM Sans + Poppins fallback -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -573,7 +574,7 @@
         margin: 24px 0;
       }
 
-      .social-links a {
+      .social-links  a {
         color: var(--muted-teal);
         font-size: 22px;
         text-decoration: none;
@@ -582,7 +583,8 @@
 
       .social-links a:hover {
         color: var(--sage);
-        transform: translateY(-4px);
+        transform: translateY(4px);
+        color: var(--navy);
       }
 
       /* fade + slide-up reveal */
@@ -1121,8 +1123,11 @@
 
     <footer class="footer">
       <div class="social-links">
-        <a href="#">📘</a><a href="#">📷</a><a href="#">🐦</a><a href="#">💼</a>
-      </div>
+        <a href="https://github.com/Brahim07321"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/brahim-zarid-2428823b0?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i class="fab fa-linkedin"></i></a> 
+        <a href="https://www.instagram.com/brahimza0_7?igsh=MXc4eTB6cXl4eWdxZg=="><i class="fab fa-instagram"></i></a>
+
+        <a href="https://wa.me/212690173677?text=Bonjour%20je%20vous%20contacte"><i class="fab fa-whatsapp"></i> </a>     </div>
       <p>© BraHiM ZaRiD — built with calm intention</p>
     </footer>
 
@@ -1191,8 +1196,15 @@ skillBars.forEach((bar) => barObserver.observe(bar));
         title: "Système ERP pour la Gestion des Stocks",
         description: "Ce projet vise à concevoir et développer un système ERP de gestion de stock permettant une administration efficace et centralisée des opérations liées aux produits et aux fournisseurs. Le système offre plusieurs fonctionnalités essentielles, notamment l’ajout et la gestion des produits, la gestion des fournisseurs, ainsi que le suivi en temps réel des niveaux de stock. Il permet également de générer des alertes en cas de stock faible afin d’éviter les ruptures En outre, la solution intègre des fonctionnalités d’importation et d’exportation de données au format Excel et PDF, facilitant ainsi l’analyse et le partage des informations. Le système inclut également le calcul des profits afin d’aider à l’évaluation de la performance commerciale et à la prise de décision.",
         tech: ["Laravel","Bootstrap","js", "MYSQL", "JSON"],
-        images: ["b1.png","b2.png","b3.png"],
-        github: "https://github.com/brahim/ecocart"
+        images: ["img/erp/log.jpeg","img/erp/1.jpeg","img/erp/dash2.jpeg", "img/erp/dash3.jpeg"
+                     ,"img/erp/dash4.jpeg", "img/erp/dash5.jpeg", "img/erp/dash6.jpeg",
+                    "img/erp/2.jpeg", "img/erp/fact.jpeg", "img/erp/3.jpeg", "img/erp/4.jpeg", "img/erp/5.jpeg"
+                    , "img/erp/6.jpeg", "img/erp/7.jpeg", "img/erp/8.jpeg", "img/erp/9.jpeg"
+                    , "img/erp/10.jpeg", "img/erp/12.jpeg", "img/erp/13.jpeg", "img/erp/14.jpeg"
+                    , "img/erp/15.jpeg", "img/erp/16.jpeg", "img/erp/17.jpeg", "img/erp/18.jpeg", 
+                    "img/erp/19.jpeg", "img/erp/logout.jpeg"],
+                    
+        github: "https://github.com/Brahim07321/Gestion_syst-me_ERP"
       },
       ecocart: {
         title: "Gestion Rendezvous",
@@ -1204,7 +1216,7 @@ skillBars.forEach((bar) => barObserver.observe(bar));
           "img/ormvh9.png","img/ormvh10.png","img/ormvh11.png","img/ormvh12.png",
           "img/ormvh13.png"
         ],
-        github: "https://github.com/brahim/ecocart"
+        github: "https://github.com/Brahim07321/gestion-rendezvous"
       }
     };
     
